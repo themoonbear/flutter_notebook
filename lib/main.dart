@@ -14,6 +14,8 @@ import 'right_back_deom.dart';
 import 'tool_tips_demo.dart';
 import 'draggable_demo.dart';
 
+import 'notodo/no_todo_app.dart';
+
 void main() {
   runApp(MaterialApp(
     title:'JSpang Demo',
@@ -143,7 +145,13 @@ class MainScreen extends StatelessWidget {
                 builder: (context) => DraggableDemo()
               ));
             },
-          ),                                                                                                                             
+          ),
+          ListTile(
+            title: Text('No-Todo app'),
+            onTap: (){
+              Navigator.of(context).push(MaterialPageRoute(builder: (context)=>NoTodoApp()));
+            },
+          )                                                                                                                             
         ],
       )
     );
