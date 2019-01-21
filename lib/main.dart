@@ -15,6 +15,7 @@ import 'tool_tips_demo.dart';
 import 'draggable_demo.dart';
 
 import 'notodo/no_todo_app.dart';
+import 'klimatic/weather.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -151,7 +152,13 @@ class MainScreen extends StatelessWidget {
             onTap: (){
               Navigator.of(context).push(MaterialPageRoute(builder: (context)=>NoTodoApp()));
             },
-          )                                                                                                                             
+          ),
+          ListTile(
+            title: Text('Weather app'),
+            onTap: (){
+              Navigator.of(context).push(MaterialPageRoute(builder: (context)=>Klimatic()));
+            },
+          )                                                                                                                                       
         ],
       )
     );
