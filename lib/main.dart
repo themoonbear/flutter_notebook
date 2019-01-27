@@ -16,6 +16,8 @@ import 'draggable_demo.dart';
 
 import 'notodo/no_todo_app.dart';
 import 'klimatic/weather.dart';
+import 'actions/focus_test_route.dart';
+import 'actions/form_test_route.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -35,6 +37,18 @@ class MainScreen extends StatelessWidget {
       appBar: AppBar(title: Text('JSpang Demo')),
       body: ListView(
         children: <Widget>[
+          ListTile(
+            title: Text('Form Test'),
+            onTap: (){
+              Navigator.of(context).push(MaterialPageRoute(builder: (context)=>FormTestRoute()));
+            },
+          ),
+          ListTile(
+            title: Text('Focus Test'),
+            onTap: (){
+              Navigator.of(context).push(MaterialPageRoute(builder: (context)=>FocusTestRoute()));
+            },
+          ),                      
           ListTile(
             title: Text('BottomNavigationWidget'),
             onTap: (){
@@ -158,7 +172,7 @@ class MainScreen extends StatelessWidget {
             onTap: (){
               Navigator.of(context).push(MaterialPageRoute(builder: (context)=>Klimatic()));
             },
-          )                                                                                                                                       
+          )                                                                                                                                                
         ],
       )
     );
