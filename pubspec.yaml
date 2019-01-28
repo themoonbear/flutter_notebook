@@ -23,6 +23,7 @@ dependencies:
   path_provider: any
   intl: ^0.15.7
   dio: ^1.0.13
+  english_words: ^3.1.5
 
 dev_dependencies:
   flutter_test:
