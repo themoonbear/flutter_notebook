@@ -1,0 +1,10 @@
+{
+  "@@last_modified": "2019-01-31T18:44:28.387014",
+  "@@locale":"zh_CH",
+  "title": "Flutter App",
+  "@title": {
+    "description": "Title for the Demo application",
+    "type": "text",
+    "placeholders": {}
+  }
+}

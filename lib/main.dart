@@ -31,6 +31,9 @@ import 'actions/turn_box_route.dart';
 import 'actions/custom_paint_route.dart';
 import 'actions/gradient_circular_progress.dart';
 import 'actions/http_test_route.dart';
+import 'actions/battery_level.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'i10n/localization_intl.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -39,7 +42,17 @@ void main() {
     theme: ThemeData(
       primaryColor: Colors.blue
     ),
-    home: MainScreen()
+    home: MainScreen(),
+    localizationsDelegates: [
+      GlobalMaterialLocalizations.delegate,
+      GlobalWidgetsLocalizations.delegate,
+      DemoLocalizationsDelegate()
+    ],
+    supportedLocales: [
+      Locale('zh', 'CN'),      
+      Locale('en', 'US')
+    ],
+    locale: Locale('zh', 'CN'),
   ));
 }
 
@@ -47,9 +60,15 @@ class MainScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('JSpang Demo')),
+      appBar: AppBar(title: Text(DemoLocalizations.of(context).title)),
       body: ListView(
         children: <Widget>[
+          ListTile(
+            title: Text('battery level Test'),
+            onTap: (){
+              Navigator.of(context).push(MaterialPageRoute(builder: (context)=>BatteryLevel()));
+            },
+          ),           
           ListTile(
             title: Text('Http Test'),
             onTap: (){
