@@ -23,6 +23,14 @@ import 'actions/flow_layout_test.dart';
 import 'actions/infinite_listview.dart';
 import 'actions/infinite_gridview.dart';
 import 'actions/custom_scrollview_test.dart';
+import 'actions/inherite_widget_test.dart';
+import 'actions/hero_animation_test.dart';
+import 'actions/stagger_animation_test.dart';
+import 'actions/gradient_button_route.dart';
+import 'actions/turn_box_route.dart';
+import 'actions/custom_paint_route.dart';
+import 'actions/gradient_circular_progress.dart';
+import 'actions/http_test_route.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -42,6 +50,54 @@ class MainScreen extends StatelessWidget {
       appBar: AppBar(title: Text('JSpang Demo')),
       body: ListView(
         children: <Widget>[
+          ListTile(
+            title: Text('Http Test'),
+            onTap: (){
+              Navigator.of(context).push(MaterialPageRoute(builder: (context)=>HttpTest()));
+            },
+          ),           
+          ListTile(
+            title: Text('Gradient Progress Test'),
+            onTap: (){
+              Navigator.of(context).push(MaterialPageRoute(builder: (context)=>GradientCircularProgressRoute()));
+            },
+          ),           
+          ListTile(
+            title: Text('Custom Paint Test'),
+            onTap: (){
+              Navigator.of(context).push(MaterialPageRoute(builder: (context)=>CustomPaintRoute()));
+            },
+          ),           
+          ListTile(
+            title: Text('Turn Button Test'),
+            onTap: (){
+              Navigator.of(context).push(MaterialPageRoute(builder: (context)=>TurnBoxRoute()));
+            },
+          ),          
+          ListTile(
+            title: Text('Gradient Button Test'),
+            onTap: (){
+              Navigator.of(context).push(MaterialPageRoute(builder: (context)=>GradientButtonRoute()));
+            },
+          ),          
+          ListTile(
+            title: Text('Stagger Animation Test'),
+            onTap: (){
+              Navigator.of(context).push(MaterialPageRoute(builder: (context)=>StaggerDemo()));
+            },
+          ),          
+          ListTile(
+            title: Text('Hero Animation Test'),
+            onTap: (){
+              Navigator.of(context).push(MaterialPageRoute(builder: (context)=>HeroAnimationTest()));
+            },
+          ),          
+          ListTile(
+            title: Text('Inherited Widget Test'),
+            onTap: (){
+              Navigator.of(context).push(MaterialPageRoute(builder: (context)=>InheriteWidgetTest()));
+            },
+          ),          
           ListTile(
             title: Text('Custom ScrollView Test'),
             onTap: (){
